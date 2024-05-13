@@ -54,17 +54,3 @@ class LoginPage(BasePage):
     def get_password_success_label(self):
         return self.find_element(LoginPageLocators.PASSWORD_SUCCESS_VAL).get_attribute("value")
 
-    def forgot_password(self):
-
-        self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL,LoginPageLocators.FORGOT_PASSWORD_LINK)
-        self.find_element(LoginPageLocators.FORGOT_PASSWORD_LINK).click()
-        time.sleep(50)
-        self.find_element(LoginPageLocators.ANOTHER_LINK).click()
-        time.sleep(10)
-        self.find_element(LoginPageLocators.VERIFICATION_LINK).click()
-        time.sleep(10)
-        self.find_element(LoginPageLocators.UPDATE_PASSWORD_LINK).click()
-        self.find_element(LoginPageLocators.CREATE_PASSWORD_TXTBX).send_keys("Saihsaif@786")
-        self.find_element(LoginPageLocators.CONFIRM_PASSWORD_TXTBX).send_keys("Saihsaif@786")
-        self.find_element(LoginPageLocators.SAVE_PASSWORD_LINK).click()
-        self.find_element(LoginPageLocators.CHANGE_PASSWORD_LINK).click()
