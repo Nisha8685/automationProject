@@ -25,3 +25,8 @@ class BasePage:
         self.driver.execute_script("scrollBy(0,500)")
 
 
+    def explicity_wait_till_clickable(self,interval,locator):
+        return WebDriverWait(self.driver,interval).until(
+        expected_conditions.element_to_be_clickable(locator))
+
+

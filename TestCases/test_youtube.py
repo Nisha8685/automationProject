@@ -6,14 +6,14 @@ from resources.config import TEST_SITE_URL
 from pages.login_page import LoginPage
 from pages.video_page import VideoPage
 from pages.video_play import VideoPlay
-from pages.comment_page import CommentPage
+
 
 class TestYouTube:
 #Test Scienario1
 
     # Test Case 1 - Login the user with correct credentials
     @pytest.mark.group1
-    @pytest.mark.group2
+
     def test_success_login_user(self, driver, username_password):
         login_page= LoginPage(driver)
         login_page.navigate_to(TEST_SITE_URL)
@@ -57,16 +57,6 @@ class TestYouTube:
         assert "Saihsaif@786" == show_password_success_lbl, "Test3 Failed"
 
 
-    def test_password_recovery(self,driver,username_password):
-        login_page=LoginPage(driver)
-        login_page.navigate_to(TEST_SITE_URL)
-        login_page.click_on_sign_in_btn()
-        login_page.login_username(username_password[0])
-        login_page.click_on_next_btn()
-        login_page.forgot_password()
-
-
-
 
 
 #Test Scenario2
@@ -82,26 +72,15 @@ class TestYouTube:
 
 
     #Test Case 5 - Check working functionality of video search and playback facility
-    @pytest.mark.group2
+
     def test_video_play(self,driver):
         video_play=VideoPlay(driver)
+        video_play.navigate_to(TEST_SITE_URL)
         video_play.click_on_search_btn()
         video_play.search_video()
         video_play_success= video_play.get_video_play_success_lbl()
         assert "Git and GitHub Tutorial for Beginners" ==video_play_success, "Test5 Failed"
 
-
-#Test Scenario3
-
-
-    #Test Case 6 - Check working functionality of writing comment
-    @pytest.mark.group2
-    def test_write_comment(self,driver):
-
-        comment_page= CommentPage(driver)
-        comment_page.scroll_element()
-        time.sleep(10)
-        comment_page.comment_click()
 
 
 

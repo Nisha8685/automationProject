@@ -16,7 +16,7 @@ class VideoPlay(BasePage):
         self.find_element(VideoPlayLocators.SEARCH_BTN).click()
         time.sleep(5)
         self.find_element(VideoPlayLocators.SELECT_LINK).click()
-        time.sleep(6)
+        time.sleep(15)
         self.find_element(VideoPlayLocators.SHOW_CAPTION_BTN).click()
 
 
