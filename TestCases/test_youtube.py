@@ -54,7 +54,7 @@ class TestYouTube:
         login_page.login_userpassword(username_password[1])
         time.sleep(2)
         show_password_success_lbl = login_page.get_password_success_label()
-        assert "Saihsaif@786" == show_password_success_lbl, "Test3 Failed"
+        assert "Abcd@123_456" == show_password_success_lbl, "Test3 Failed"
 
 
 

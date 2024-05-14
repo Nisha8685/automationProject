@@ -22,6 +22,7 @@ class LoginPage(BasePage):
 
     def login_userpassword(self, password):
             self.explicitly_wait_and_find_element(MAX_WAIT_INTERVAL, LoginPageLocators.PASSWORD_TXTBX)
+            time.sleep(3)
             self.find_element(LoginPageLocators.PASSWORD_TXTBX).send_keys(password)
 
 
